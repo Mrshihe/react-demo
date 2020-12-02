@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 
-import App from './app.js'
+import Todolist from './pages/todlist.js'
 
 ReactDOM.render(
-  <App />,
+  <Todolist />,
   document.getElementById('root')
 );
