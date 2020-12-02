@@ -1,38 +1,70 @@
-.App {
+.todoListApp{
+  width: 600px;
+  margin: 0 auto;
+}
+.todoListApp .title{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todoListApp .form{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.todoListApp .form .formInput{
+  flex: 1;
+}
+.todoListApp .form .formInput input{
+  display: block;
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  font-size: 16px;
+  font-family: 'Microsoft JHengHei';
+  text-indent: 16px;
+}
+.todoListApp .form .formSubmit{
+  margin-left: 20px;
+  padding: 10px 25px;
+  line-height: 1;
+  font-size: 16px;
   color: white;
+  background-color: dodgerblue;
+  text-align: center;
+  border-radius: 6px;
 }
-
-.App-link {
-  color: #61dafb;
+.todoListApp .todoList{
+  margin: 20px 0;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todoListApp .todoList .todoItem{
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+.todoListApp .todoList .todoItem span{
+  margin-right: 20px;
+}
+.todoListApp .todoList .todoItem span.isComplete{
+  text-decoration: line-through;
+  color: darkgreen;
+}
+.todoListApp .todoList .todoItem .btn{
+  padding: 6px 16px;
+  line-height: 1;
+  font-size: 14px;
+  color: white;
+  background-color: dodgerblue;
+  text-align: center;
+  border-radius: 4px;
+}
+.todoListApp .controlBox{
+  font-size: 0;
+}
+.todoListApp .controlBox .btn{
+  display: inline-block;
+  margin-right: 8px;
+  padding: 10px 25px;
+  line-height: 1;
+  font-size: 16px;
+  color: white;
+  background-color: dodgerblue;
+  text-align: center;
+  border-radius: 6px;
 }
