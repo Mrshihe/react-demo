@@ -1,0 +1,31 @@
+/* 入场动画 */
+/* 入场动画第一帧 */
+/* .fade-appear .fade-appear-active 为渲染时执行的动画效果 */
+.fade-enter, .fade-appear{
+  opacity: 0;
+}
+/* 入场动画过程中 */
+.fade-enter-active, .fade-appear-active{
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+/* 入场动画完成 */
+.fade-enter-done{
+  opacity: 1;
+}
+
+
+/* 出场动画 */
+/* 出场动画第一帧 */
+.fade-exit{
+  opacity: 1;
+}
+/* 出场动画过程中 */
+.fade-exit-active{
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+/* 出场动画完成 */
+.fade-exit-done{
+  opacity: 0;
+}
