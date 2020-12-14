@@ -1,0 +1,16 @@
+.wrapper{
+  padding: 20px;
+  width: 600px;
+  margin: 0 auto;
+}
+.todoWrapper{
+  display: flex;
+  margin-bottom: 15px;
+}
+.text{
+  flex: 1;
+}
+.btn{
+  width: 80px;
+  margin-left: 10px;
+}
