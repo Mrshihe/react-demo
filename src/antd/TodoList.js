@@ -49,7 +49,7 @@ class TodoList extends React.Component {
       type: 'add_todo_item'
     }
     store.dispatch(action)
-  }
+  }         
   removeItem(index){
     const action = {
       type: 'delete_todo_item',
