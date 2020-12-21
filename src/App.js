@@ -1,10 +1,18 @@
 import React from 'react'
-import './app.css'
+
+import  Header  from './common/header';
+import { GlobalStyle } from './style'
+
+import store from './store'
+import { Provider } from 'react-redux'
 
 class App extends React.Component {
   render() {
     return (
-      <h1>Hello React</h1>
+      <Provider store={ store }>
+        <GlobalStyle />
+        <Header />
+      </Provider>
     )
   }
 }

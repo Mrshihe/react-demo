@@ -60,7 +60,8 @@ const mapDispatchToProps = (dispatch) => {
         value: e.target.value
       })
     },
-    handleSumbit() {
+    handleSumbit(e) {
+      console.log(e)
       dispatch({type: ADD_TODO_ITEM})
     },
     handleDelete(index) {
