@@ -7,11 +7,16 @@ import {
   NavSearch,
   Addition,
   Button,
-  SearchWrapper 
+  SearchWrapper,
+  SearchInfo,
+  SearchInfoTitle,
+	SearchInfoSwitch,
+	SearchInfoList,
+	SearchInfoItem, 
 } from './style'
 import { CSSTransition } from 'react-transition-group'
-
 import { connect } from 'react-redux'
+import { actionCreators } from './store';
 
 const Header = (props) => {
   return (
@@ -36,7 +41,19 @@ const Header = (props) => {
               onBlur={ props.handleBlur }
             ></NavSearch>
           </CSSTransition>
-          <i className="iconfont">&#xe614;</i>
+          <i className="iconfont zoom">&#xe614;</i>
+          <SearchInfo>
+            <SearchInfoTitle>
+              热门搜索
+              <SearchInfoSwitch>
+                <i className="iconfont spin">&#xe851;</i>
+                换一批
+              </SearchInfoSwitch>
+            </SearchInfoTitle>
+            <SearchInfoList>
+              <SearchInfoItem>教育</SearchInfoItem>
+            </SearchInfoList>
+          </SearchInfo>
         </SearchWrapper>
       </Nav>
       <Addition>
@@ -49,21 +66,22 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    focused: state.focused
+    // 将reducer拆分后 state分出不同对象
+    // immutable对象访问属性需要使用get(name)方法
+    // state是js对象 header是immutable对象
+    // focused: state.header.get('focused')
+    // 使用redux-immutable state.get('header').get('focused') 两种写法等价
+    focused: state.getIn(['header', 'focused'])
   }
 }
 
 const mapDispathToProps = (dispatch) => {
   return {
     handleFocus() {
-      dispatch({
-        type: 'input_focus'
-      })
+      dispatch( actionCreators.searchFocus() )
     },
     handleBlur() {
-      dispatch({
-        type: 'input_blur'
-      })
+      dispatch( actionCreators.searchBlur() )
     }
   }
 }
