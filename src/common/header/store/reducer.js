@@ -3,7 +3,8 @@ import { fromJS } from 'immutable';
 
 // 将普通对象改为immutable对象
 const defaultState = fromJS({
-  focused: false
+  focused: false,
+  list: []
 });
 
 // 一定不能对原始state进行修改
