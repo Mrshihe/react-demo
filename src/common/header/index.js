@@ -19,19 +19,32 @@ import { connect } from 'react-redux'
 import { actionCreators } from './store';
 
 class Header extends React.Component {
-  getListArea(show) {
-    if(show){
+  getListArea() {
+    const { focused, mouseIn, hotList, page, totalPage, handleMouseEnter, handleMouseLeave, handleChangeList } = this.props;
+    const pageList = []
+    const newList = hotList.toJS();
+    if(newList.length){
+      for(let i=(page-1)*5; i<page*5; i++){
+        pageList.push(
+          <SearchInfoItem key={ newList[i] }>{ newList[i] }</SearchInfoItem>
+        )
+      }
+    }
+    if(focused || mouseIn){
       return (
-        <SearchInfo>
+        <SearchInfo
+          onMouseEnter = { handleMouseEnter }
+          onMouseLeave = { handleMouseLeave }
+        >
           <SearchInfoTitle>
             热门搜索
-            <SearchInfoSwitch>
+            <SearchInfoSwitch onClick={ () => handleChangeList(page,totalPage)}>
               <i className="iconfont spin">&#xe851;</i>
               换一批
             </SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
-            <SearchInfoItem>教育</SearchInfoItem>
+            { pageList }
           </SearchInfoList>
         </SearchInfo>
       )
@@ -63,7 +76,7 @@ class Header extends React.Component {
               ></NavSearch>
             </CSSTransition>
             <i className="iconfont zoom">&#xe614;</i>
-            { this.getListArea(this.props.focused) }
+            { this.getListArea() }
           </SearchWrapper>
         </Nav>
         <Addition>
@@ -82,7 +95,11 @@ const mapStateToProps = (state) => {
     // state是js对象 header是immutable对象
     // focused: state.header.get('focused')
     // 使用redux-immutable state.get('header').get('focused') 两种写法等价
-    focused: state.getIn(['header', 'focused'])
+    focused: state.getIn(['header', 'focused']),
+    mouseIn: state.getIn(['header', 'mouseIn']),
+    hotList: state.getIn(['header', 'list']),
+    page: state.getIn(['header', 'page']),
+    totalPage: state.getIn(['header','totalPage'])
   }
 }
 
@@ -94,6 +111,20 @@ const mapDispathToProps = (dispatch) => {
     },
     handleBlur() {
       dispatch( actionCreators.searchBlur() )
+    },
+    handleMouseEnter() {
+      dispatch( actionCreators.mouseEnter() )
+    },
+    handleMouseLeave() {
+      dispatch( actionCreators.mouseLeave() )
+    },
+    handleChangeList(page,totalPage) {
+      console.log( page, totalPage )
+      if(page<totalPage){
+        dispatch(actionCreators.changePage(page+1))
+      }else{
+        dispatch(actionCreators.changePage(1))
+      }
     }
   }
 }
