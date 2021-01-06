@@ -4,8 +4,10 @@ import { combineReducers } from 'redux-immutable'
 
 // 拆分出的reducer引入
 import { reducer as headerReducer} from '../common/header/store';
+import { reducer as homeReducer } from '../pages/home/store';
 
 // 将分散reducer合并使用
 export default combineReducers({
-  header: headerReducer
+  header: headerReducer,
+  home: homeReducer
 })
