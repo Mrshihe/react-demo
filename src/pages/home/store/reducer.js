@@ -16,6 +16,8 @@ export default (state=defaultState, action) => {
         recommendList: fromJS(action.recommendList),
         writerList: fromJS(action.writerList)
       })
+    case "get_more_article":
+      return state.set('articleList', state.get('articleList').concat(fromJS(action.list)))
     default:
       return state;
   }
