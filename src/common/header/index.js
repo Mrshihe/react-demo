@@ -17,6 +17,7 @@ import {
 import { CSSTransition } from 'react-transition-group'
 import { connect } from 'react-redux'
 import { actionCreators } from './store';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
   getListArea() {
@@ -57,11 +58,13 @@ class Header extends React.Component {
   render(){
     return (
       <HeaderWrapper>
-        <Logo />
+        <Link to="/"><Logo /></Link>
         <Nav>
           <NavItem className="left active">首页</NavItem>
           <NavItem className="left">下载App</NavItem>
-          <NavItem className="right">登录</NavItem>
+          {
+            this.props.loginStatus ? <NavItem className="right" onClick={ this.props.signOut }>退出</NavItem> : <Link to="/login"><NavItem className="right">登录</NavItem></Link>
+          }
           <NavItem className="right">
             <i className="iconfont">&#xe636;</i>
           </NavItem>
@@ -101,7 +104,8 @@ const mapStateToProps = (state) => {
     mouseIn: state.getIn(['header', 'mouseIn']),
     hotList: state.getIn(['header', 'list']),
     page: state.getIn(['header', 'page']),
-    totalPage: state.getIn(['header','totalPage'])
+    totalPage: state.getIn(['header','totalPage']),
+    loginStatus: state.getIn(['login', 'loginStatus'])
   }
 }
 
@@ -130,6 +134,11 @@ const mapDispathToProps = (dispatch) => {
       }else{
         dispatch(actionCreators.changePage(1))
       }
+    },
+    signOut(){
+      dispatch({
+        type: 'sign_out'
+      })
     }
   }
 }
