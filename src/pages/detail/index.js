@@ -2,6 +2,9 @@ import React from 'react';
 import { DetailWrapper } from './style';
 import axios from 'axios';
 
+// 配合react-loadable使用，用于绑定获取传参
+import { withRouter } from 'react-router-dom';
+
 class Detail extends React.Component {
   constructor(props){
     super(props)
@@ -33,4 +36,4 @@ class Detail extends React.Component {
   }
 }
 
-export default Detail;
+export default withRouter(Detail);
