@@ -1,12 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 
-import { ClassProps }  from './app';
+import { Controlled, UnControlled }  from './app';
 import './style.js';
 
 
 ReactDOM.render(
-  <ClassProps name="Any" sex="女" age="17" />,
+  <>
+    <Controlled />
+    <UnControlled />
+  </>
+  ,
   document.getElementById('root')
 );
 /*
