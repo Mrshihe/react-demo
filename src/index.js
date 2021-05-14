@@ -1,15 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 
-import { Controlled, UnControlled }  from './app';
+import { ComponentLifeCycle }  from './app';
 import './style.js';
 
 
 ReactDOM.render(
-  <>
-    <Controlled />
-    <UnControlled />
-  </>
+    <ComponentLifeCycle />
   ,
   document.getElementById('root')
 );
