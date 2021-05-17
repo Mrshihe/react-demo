@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 
-import { ComponentLifeCycle }  from './app';
+import { PersonDiff }  from './app';
 import './style.js';
 
 
 ReactDOM.render(
-    <ComponentLifeCycle />
+    <PersonDiff />
   ,
   document.getElementById('root')
 );
