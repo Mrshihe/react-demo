@@ -3,9 +3,15 @@ import TodoItem from './TodoItem'
 
 export default class TodoList extends Component {
   render() {
+    const { todolist } = this.props;
     return (
       <ul className="todo-main">
-        <TodoItem />
+        {
+          todolist.map( item => {
+            // 利用解构向组件内传值
+            return <TodoItem key={ item.id } {...item}  />
+          })
+        }
       </ul>
     )
   }
