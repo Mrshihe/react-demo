@@ -1,13 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 
-import { PersonDiff }  from './app';
+// import { PersonDiff }  from './app';
 import './style.js';
+
+// TodoList case
+import App  from './TodoList/index.jsx'
 
 
 ReactDOM.render(
-    <PersonDiff />
-  ,
+  <App />,
   document.getElementById('root')
 );
 /*
