@@ -14,7 +14,7 @@ key为虚拟DOM对象的标识，当新旧虚拟DOM进行对比时
 
 ### redux中间件thunk作用于action和store之间，action为函数的时候会先交给thunk进行处理
 
-#### react配置代理
+### react配置代理
 1. 在package.json中新增proxy字段
 ```
 "proxy":"http://localhost:5000"
