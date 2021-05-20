@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
+import PubSub from 'pubsub-js'
 import axios from 'axios';
 
 export default class Search extends Component {
   searchUser = ()=>{
     const keyWord = this.input.value 
     // https://api.github.com/search/users?q=${keyWord} 
+    // 发布消息
+    PubSub.publish('ListChange',{isFirst: false, isLoading: true})
     axios.get(`/search/users2?q=${keyWord}`).then(res => {
-      this.props.getUsers(res.data.items)
+      PubSub.publish('ListChange',{isLoading: false, usersList: res.data.items})
+    }).catch(err => {
+      PubSub.publish('ListChange',{isLoading: false, err: err.message})
     })
   }
   render() {

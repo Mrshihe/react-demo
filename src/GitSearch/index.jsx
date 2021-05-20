@@ -3,19 +3,15 @@ import Search from './Search'
 import SearchList from './SearchList'
 import './style.css'
 
+/*
+采用发布-订阅模式
+*/
 export default class App extends Component {
-  state = {
-    usersList: [],
-    isLoading: false
-  }
-  getUsers = arr => {
-    this.setState({ usersList: arr })
-  }
   render() {
     return (
       <div className="container">
-        <Search getUsers={ this.getUsers } />
-        <SearchList users={ this.state.usersList } />
+        <Search />
+        <SearchList />
       </div>
     )
   }
