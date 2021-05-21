@@ -8,8 +8,10 @@ import './style.js';
 // import App  from './TodoList/index.jsx'
 
 // GitSearch case
-import App from './GitSearch/index'
+//import App from './GitSearch/index'
 
+//RouterDemo case
+import App from './RouterDemo/index'
 
 ReactDOM.render(
   <App />,
