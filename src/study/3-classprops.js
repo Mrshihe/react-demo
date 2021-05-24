@@ -19,7 +19,9 @@ class ClassProps extends React.Component {
   */
 
   render(){
-    /* 不能修改自身的 props */
+    /* 不能修改自身的 props
+       this.props.children(Hello word!) 可以获取标签体内容 <Hello> Hello word! </Hello> 
+    */
     const { name, age, sex } = this.props
     return (
       <ul>
