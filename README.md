@@ -12,7 +12,13 @@ key为虚拟DOM对象的标识，当新旧虚拟DOM进行对比时
 
 ### 无状态组件性能略高，适用于只有render的组件
 
-### redux中间件thunk作用于action和store之间，action为函数的时候会先交给thunk进行处理
+### redux 
+##### redux专门用于做状态管理的js库,可用于React/Vue等框架
+##### redux三个核心概念
+1. action: 动作对象, 包含两个属性( type:标识属性,唯一性, data:数据属性,值类型任意 )
+2. reducer: 用于初始化状态、加工状态；加工时根据新旧state产生新的state 为纯函数
+3. store: 将state、action、reducer联系在一起的对象  
+###### 中间件redux-thunk作用于action和store之间，action为函数的时候会先交给thunk进行处理
 
 ### react配置代理
 1. 在package.json中新增proxy字段

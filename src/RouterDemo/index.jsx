@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink, BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import Header from './Header'
 import About from './About'
 import Home from './Home'
 import HomeCopy from './HomeCopy'
@@ -7,14 +8,15 @@ import HomeCopy from './HomeCopy'
 export default class App extends Component {
   render() {
     return (
-      // 利用HTML5 History API
+      /*  
+        BrowserRouter 利用HTML5 History API 路径中没有# localhost:3000/demo 不兼容IE9及以下版本
+        HashRouter 利用url的哈希值 路径包含# localhost:3000/#/demo
+
+        BrowserRouter下state参数刷新不丢失，HashRouter下state参数刷新会丢失
+      */
       <BrowserRouter>
         <div>
-          <div className="row">
-            <div className="col-xs-offset-2 col-xs-8">
-              <div className="page-header"><h2>React Router Demo</h2></div>
-            </div>
-          </div>
+          <Header />
           <div className="row">
             <div className="col-xs-2 col-xs-offset-2">
               <div className="list-group">

@@ -5,10 +5,10 @@ import ReactDOM from 'react-dom';
 import './style.js';
 
 // TodoList case
-// import App  from './TodoList/index.jsx'
+// import App  from './TodoListDemo/index.jsx'
 
 // GitSearch case
-//import App from './GitSearch/index'
+//import App from './GitSearchDemo/index'
 
 //RouterDemo case
 import App from './RouterDemo/index'
