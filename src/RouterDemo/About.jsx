@@ -5,6 +5,7 @@ export default class About extends Component {
     return (
       <div>
         我是About组件内容
+        <hr />
       </div>
     )
   }
