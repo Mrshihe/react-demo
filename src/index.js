@@ -18,10 +18,14 @@ import './style.js';
 
 // React_Redux_Demo case
 import App from './React_Redux_Demo'
-// 引入store, 以props方式传递 <App store={ store } />
+// 引入store, 以props方式传递 <App store={ store } /> 或者使用Provider
 import store from './React_Redux_Demo/redux/store'
+// Provider全局传递store给容器组件
+import { Provider } from 'react-redux'
 ReactDOM.render(
-  <App store={ store } />,
+  <Provider store={ store }>
+    <App  />
+  </Provider>,
   document.getElementById('root')
 );
 
