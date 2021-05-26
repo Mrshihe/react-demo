@@ -16,7 +16,7 @@ export default class App extends Component {
   incrementIfOdd = () =>{
     const { value } = this.selectEl
     const count = store.getState()
-    if(count%2 != 0){
+    if(count%2 !== 0){
       store.dispatch(createIncrementAction(this.selectEl.value*1))
     }
   }

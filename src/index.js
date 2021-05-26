@@ -14,12 +14,18 @@ import './style.js';
 // import App from './RouterDemo/index'
 
 //ReduxDemo case
-import App from './ReduxCreateActionDemo'
+// import App from './ReduxCreateActionDemo'
 
+// React_Redux_Demo case
+import App from './React_Redux_Demo'
+// 引入store, 以props方式传递 <App store={ store } />
+import store from './React_Redux_Demo/redux/store'
 ReactDOM.render(
-  <App />,
+  <App store={ store } />,
   document.getElementById('root')
 );
+
+
 /*
 针对函数式组件
 1. 解析组件标签，找到组件
