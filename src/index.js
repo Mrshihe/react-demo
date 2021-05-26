@@ -14,7 +14,7 @@ import './style.js';
 // import App from './RouterDemo/index'
 
 //ReduxDemo case
-import App from './ReduxMiniDemo'
+import App from './ReduxCreateActionDemo'
 
 ReactDOM.render(
   <App />,
