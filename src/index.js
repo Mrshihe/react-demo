@@ -11,7 +11,10 @@ import './style.js';
 //import App from './GitSearchDemo/index'
 
 //RouterDemo case
-import App from './RouterDemo/index'
+// import App from './RouterDemo/index'
+
+//ReduxDemo case
+import App from './ReduxMiniDemo'
 
 ReactDOM.render(
   <App />,
