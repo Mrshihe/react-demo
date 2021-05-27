@@ -7,3 +7,4 @@ export { Controlled, UnControlled } from './6-componentform';
 export { LifeCycle } from './7-lifecycle-old';
 export { ComponentLifeCycle } from './8-lifecycle-new'
 export { PersonDiff } from './9-componentdiff'
+export { ComponentSetstate } from './10-setstate'

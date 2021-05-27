@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 
 // study 
-// import { PersonDiff }  from './app';
+// import { ComponentSetstate }  from './study';
 
 // TodoList case
 // import App  from './TodoListDemo/index.jsx'
@@ -11,7 +11,7 @@ import ReactDOM from 'react-dom';
 //import App from './GitSearchDemo/index'
 
 //RouterDemo case
-// import App from './RouterDemo/index'
+import App from './RouterDemo/index'
 
 //ReduxDemo case
 // import App from './ReduxCreateActionDemo'
@@ -33,9 +33,9 @@ import ReactDOM from 'react-dom';
 // import App from './ReactReduxComplete'
 
 // jianshuCase 
-import App from './jianshuCase/app'
+// import App from './jianshuCase/app'
 
-ReactDOM.render(<App/>,document.getElementById('root'))
+ReactDOM.render(<App />,document.getElementById('root'))
 
 /*
 针对函数式组件

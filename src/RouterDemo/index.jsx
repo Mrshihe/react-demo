@@ -1,9 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component, lazy, Suspense } from 'react'
 import { NavLink, BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import Header from './Header'
-import About from './About'
-import Home from './Home'
+// import About from './About'
+// import Home from './Home'
 import HomeCopy from './HomeCopy'
+
+// 使用lazy进行路由懒加载
+const Home = lazy(() => import('./Home'))
+const About = lazy(() => import('./About'))
 
 export default class App extends Component {
   render() {
@@ -41,13 +45,18 @@ export default class App extends Component {
                    默认情况下如果path重复会同时展示，匹配到一个路由后，会继续向下匹配，
                    使用Switch标签阻止重复匹配, 匹配到一个路由后阻止向后继续匹配 (可以提高效率)
                   */}
-                  <Switch>
-                    <Route path="/about" component={ About } />
-                    <Route path="/home" component={ Home } />
-                    <Route path="/home" component={ HomeCopy }></Route>
-                    {/* 如果路由均没匹配上，由Redire指向路径 */}
-                    <Redirect to="/about"></Redirect>
-                  </Switch>
+                  {/*
+                   Suspense组件配合lazy进行路由懒加载, fallback指定加载前的等待界面 
+                   */}
+                  <Suspense fallback={<h1>loading.....</h1>}>
+                    <Switch>
+                      <Route path="/about" component={ About } />
+                      <Route path="/home" component={ Home } />
+                      <Route path="/home" component={ HomeCopy }></Route>
+                      {/* 如果路由均没匹配上，由Redire指向路径 */}
+                      <Redirect to="/about"></Redirect>
+                    </Switch>
+                  </Suspense>
                 </div>
               </div>
             </div>
