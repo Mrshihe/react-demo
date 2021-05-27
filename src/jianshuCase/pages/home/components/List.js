@@ -15,7 +15,7 @@ function List(props) {
             
             <Link to={`/detail/${item.get('id')}`} key={index}>
               <ListItem>
-                <img alt={item.get('title')} className='pic' src={item.get('imgUrl')} />
+                <img alt={item.get('title')} className='pic' src={`//images.weserv.nl/?url=`+item.get('imgUrl')} />
                 <div className="info">
                   <h3 className='title'>{item.get('title')}</h3>
                   <p className='desc'>{item.get('desc')}</p>

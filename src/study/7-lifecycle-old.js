@@ -80,6 +80,7 @@ class LifeCycle extends React.Component {
   }
 
   // 组件是否应该被更新, 调用setState触发
+  // 当父组件更新时 子组件render也会触发，需要进行判断，避免性能损耗
   shouldComponentUpdate(){
     // 返回true更新 返回false不更新
     console.log('Parent-shouldComponentUpdate')

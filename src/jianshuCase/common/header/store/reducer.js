@@ -12,7 +12,7 @@ const defaultState = fromJS({
 });
 
 // 一定不能对原始state进行修改
-export default (state=defaultState, action) => {
+const headerReducer = (state=defaultState, action) => {
   switch(action.type) {
     case actionTypes.SEARCH_FOCUS:
       return state.set('focused', true);
@@ -44,3 +44,5 @@ export default (state=defaultState, action) => {
   // }
   // return state;
 }
+
+export default headerReducer

@@ -7,7 +7,7 @@ class Recommend extends React.Component {
       <div>
         {
           this.props.recommendList.map(item => {
-            return <RecommendItem key={item.get('id')} imgUrl={item.get('imgUrl')} />
+            return <RecommendItem key={item.get('id')} imgUrl={`//images.weserv.nl/?url=`+item.get('imgUrl')} />
           })
         }
       </div>

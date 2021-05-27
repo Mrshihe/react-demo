@@ -4,7 +4,7 @@ const defaultState = fromJS({
   loginStatus: false
 })
 
-export default (state=defaultState, action) => {
+const loginReducers = (state=defaultState, action) => {
   switch (action.type) {
     case 'login_submit':
       return state.set('loginStatus',true);
@@ -14,3 +14,4 @@ export default (state=defaultState, action) => {
       return state;
   }
 }
+export default loginReducers

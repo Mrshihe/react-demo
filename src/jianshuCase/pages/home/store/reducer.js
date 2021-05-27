@@ -7,7 +7,7 @@ const defaultState = fromJS({
   writerList: []
 })
 
-export default (state=defaultState, action) => {
+const homeReducer = (state=defaultState, action) => {
   switch(action.type) {
     case "get_home_data":
       return state.merge({
@@ -22,3 +22,4 @@ export default (state=defaultState, action) => {
       return state;
   }
 }
+export default homeReducer

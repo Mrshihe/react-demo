@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 
+// study 
 // import { PersonDiff }  from './app';
-import './style.js';
 
 // TodoList case
 // import App  from './TodoListDemo/index.jsx'
@@ -30,7 +30,10 @@ import './style.js';
 // );
 
 // ReactReduxComplete
-import App from './ReactReduxComplete'
+// import App from './ReactReduxComplete'
+
+// jianshuCase 
+import App from './jianshuCase/app'
 
 ReactDOM.render(<App/>,document.getElementById('root'))
 
