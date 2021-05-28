@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 
 // study 
-// import { ComponentSetstate }  from './study';
+import { RenderProps }  from './study';
 
 // TodoList case
 // import App  from './TodoListDemo/index.jsx'
@@ -11,7 +11,7 @@ import ReactDOM from 'react-dom';
 //import App from './GitSearchDemo/index'
 
 //RouterDemo case
-import App from './RouterDemo/index'
+// import App from './RouterDemo/index'
 
 //ReduxDemo case
 // import App from './ReduxCreateActionDemo'
@@ -35,7 +35,7 @@ import App from './RouterDemo/index'
 // jianshuCase 
 // import App from './jianshuCase/app'
 
-ReactDOM.render(<App />,document.getElementById('root'))
+ReactDOM.render(<RenderProps />,document.getElementById('root'))
 
 /*
 针对函数式组件
