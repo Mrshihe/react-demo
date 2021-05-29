@@ -52,3 +52,14 @@ module.exports = function(app) {
 }
 ```
 
+### React组件通信方式总结
+##### 组件间常见关系和通信方式
+```
+父子组件 兄弟组件 祖孙组件
+
+1. props: children props  / render props
+2. 消息订阅-发布  pubs-sub
+3. 状态集中管理 redux
+4. 生产者-消费者模式 conText
+```
+
