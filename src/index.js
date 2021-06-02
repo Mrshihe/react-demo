@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 
 // study 
-import { ErrorBoundary }  from './study';
+import { ChildrenProps }  from './study';
 
 // TodoList case
 // import App  from './TodoListDemo/index.jsx'
@@ -35,7 +35,7 @@ import { ErrorBoundary }  from './study';
 // jianshuCase 
 // import App from './jianshuCase/app'
 
-ReactDOM.render(<ErrorBoundary />,document.getElementById('root'))
+ReactDOM.render(<ChildrenProps />,document.getElementById('root'))
 
 /*
 针对函数式组件

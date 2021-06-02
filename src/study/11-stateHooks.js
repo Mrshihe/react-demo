@@ -10,11 +10,17 @@ const HooksState = () => {
   2. setXxx(value => newValue): 参数为函数, 接收原本的状态值, 返回新的状态值
   */
   const [count, setcount] = useState(0)
+  const increment = () => {
+    // setcount(count => count +1)
+    setTimeout(()=>{
+      setcount(count => count +1)
+    },1000)
+  }
   return (
     <div style={{width: '500px', margin: '30px auto'}}>
       <h3>Hooks特性从16.8版本开始支持，可以使函数式组件支持state和其他React特性</h3>
       <h5>当天数值为：{ count }</h5>
-      <button onClick={ () => { setcount(count+1) } }>点击+1</button>
+      <button onClick={ increment }>点击+1</button>
     </div>
   )
 }
